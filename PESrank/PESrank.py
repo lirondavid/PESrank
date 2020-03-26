@@ -96,7 +96,7 @@ def unLeetWord(word):
 
 
 def main(username, password, path):
-    r = rank(password, path)
+    r,explain = rank(password, path)
     y = str(uuid.uuid1())
     file_path = os.path.join(path, "out", str(y) + ".txt")
     with open(file_path, "w") as f:
@@ -138,6 +138,13 @@ def rank(password, path):
                     if (pp1 != None and pp2 != None and pp3 != None):
                         if float(pp1)*float(pp2)*float(pp3) > maxProb:
                             maxProb = float(pp1)*float(pp2)*float(pp3)
+                            G1=P1
+                            G2=unLeetP2
+                            G3=P3
+                            g1=pp1
+                            g2=pp2
+                            g3=pp3
+                            
 
             pos1 = "()"
             pos2 = "()"
@@ -147,8 +154,18 @@ def rank(password, path):
                 prob = maxProb*float(pp4)*float(pp5)
                 L = ESrank.main2(rank_config.L1, rank_config.L2, prob, 14)
                 L = sum(L)/2
+                
+                explain=[]
+                if G2!="":
+                    explain.append([2,g2])
+                if G1!="":
+                    explain.append([1,g1])
+                if G3!="":
+                    explain.append([3,g3])
+                
             else:
                 L = -5
+                explain=[]
         else:
             if f != 0:
                 P1 = password[0:f]
@@ -179,7 +196,22 @@ def rank(password, path):
                 prob = float(pp1)*float(pp2)*float(pp3)*float(pp4)*float(pp5)
                 L = ESrank.main2(rank_config.L1, rank_config.L2, prob, 14)
                 L = sum(L)/2
+                
+                explain=[]
+                if unLeetP2!="":
+                    explain.append((2,pp2))
+                if P1!="":
+                    explain.append((1,pp1))
+                if P3!="":
+                    explain.append((3,pp3))
+                if pos1!="()":
+                    explain.append((4,pp4))
+                if pos2!="()":
+                    explain.append((5,pp5))
+                
             else:
                 L = -5
+                explain=[]
+                
 
-    return L
+    return [L,explain]
