@@ -17,7 +17,7 @@ else:
 
     print(", according to this study, based on 905 million leaked passwords")
         
-    print("Your password is based on the leaked word: '"+str(explain[0][0])+ "' that was used by",int(float(explain[0][1])*n), "people")
+    print("Your password is based on the leaked word: '"+str(explain[0][1])+ "' that was used by",int(float(explain[0][2])*n), "people")
     for lst in explain:
         if math.ceil(float(lst[1])*n)>=100:
             if lst[0]==1:

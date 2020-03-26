@@ -157,7 +157,7 @@ def rank(password, path):
                 
                 explain=[]
                 if G2!="":
-                    explain.append([2,g2])
+                    explain.append([2,G2,g2])
                 if G1!="":
                     explain.append([1,g1])
                 if G3!="":
@@ -199,7 +199,7 @@ def rank(password, path):
                 
                 explain=[]
                 if unLeetP2!="":
-                    explain.append((2,pp2))
+                    explain.append((2,unLeetP2,pp2))
                 if P1!="":
                     explain.append((1,pp1))
                 if P3!="":
