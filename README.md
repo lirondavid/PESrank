@@ -27,11 +27,11 @@ under GPLv2 - See [license.txt](license.txt) for more information.
 If you find this software useful, we ask that you cite our paper:
 
 ```
-@article{david2019context,
-  title={Context Aware Password Guessability via Multi-Dimensional Rank Estimation},
+@article{david2021online,
+  title={An Explainable Online Password Strength Estimator},
   author={David, Liron and Wool, Avishai},
-  journal={arXiv preprint arXiv:1912.02551},
-  year={2019}
+  journal={European Symposium on Research in Computer Security (ESORICS)},
+  year={2021}
 }
 ```
 
